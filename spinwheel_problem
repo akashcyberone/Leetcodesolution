@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int n,initial,rotation;
+   cin>>n>>initial>>rotation;
+   
+   int finalpos=(initial+rotation)%n;
+   cout<<finalpos;
+
+    return 0;
+}
