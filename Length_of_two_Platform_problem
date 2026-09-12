@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   double TL,PL,speed;
+   cin>>TL>>PL>>speed;
+   speed=speed*5/18;
+   double tim=(TL+PL)/speed;
+   cout<<tim;
+    return 0;
+}
