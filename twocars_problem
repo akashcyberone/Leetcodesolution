@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int  a,b,dist;
+   cin>>a>>b>>dist;
+   
+   double relspeed=abs(a-b);
+   double tim=dist/relspeed;
+   cout<<tim;
+    return 0;
+}
