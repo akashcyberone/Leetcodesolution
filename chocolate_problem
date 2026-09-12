@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    int total=n;
+    int wrapper=n;
+    while(wrapper>=k){
+        int newch=wrapper/k;
+        total+=newch;
+        wrapper=wrapper%k+newch;
+    }    
+    cout<<total;
+
+    return 0;
+}
