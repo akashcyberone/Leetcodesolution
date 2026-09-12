@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int worker,days,newworker;
+   cin>>worker>>days;
+   cin>>newworker;
+   
+   int twork=worker*days;
+   int newdays=twork/newworker;
+   cout<<"New Days = "<<newdays;
+
+    return 0;
+}
