@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int v,w;
+    cin>>v>>w;
+    
+    int four=(w-2*v)/2;
+    int two=v-four;
+    cout<<"Two wheeler = "<<two<<endl;
+    cout<<"Four wheeler = "<<four;
+
+    return 0;
+}
