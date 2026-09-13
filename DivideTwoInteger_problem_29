@@ -1,0 +1,33 @@
+#include <iostream>
+#include<climits>
+using namespace std;
+
+class Sloution{
+    public:
+    int divide(int dividend,int divisor){
+        if(dividend==INT_MIN && divisor==-1){
+            return INT_MAX;
+        }
+    long long a=llabs((long long)dividend);
+    long long b=llabs((long long)divisor);
+    long long s=0;
+    for(int i=31; i>=0; i--){
+        if((a>>i)>=b){
+            a-=(b<<i);
+            s+=(1ll<<i);
+        }
+    }
+    if((dividend<0)!=(divisor<0)){
+        s=-s;
+    }
+    return (int)s;
+    }
+};
+int main()
+{   int a,b;
+    cin>>a>>b;
+    Sloution obj;
+    cout<<obj.divide(a,b)<<endl;
+
+    return 0;
+}
