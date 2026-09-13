@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+long long  convertbase(long long number, int base){
+    long long decimal=0;
+    long long power=1;
+    while(number>0){
+        int digit=number%10;
+        decimal+=digit*power;
+        power*=base;
+        number/=10;
+    }
+    return decimal;
+}
+int main()
+{   long long num;
+    int base;
+    cin>>num>>base;
+    cout<<"Convert Any base to decimal ="<<convertbase(num,base)<<endl;
+    
+    return 0;
+}
