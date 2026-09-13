@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Solution{
+    public:
+    double powerofx(double x,long n){
+        if(n==0){
+            return 1;
+        }
+       if(n<0){
+           return powerofx(1/x,-n);
+       }
+       if(n%2==0){
+           return powerofx(x*x,n/2);
+       }
+       return x*powerofx(x*x,(n-1)/2);
+    }
+    double mypow(double x,long n){
+        return powerofx(x,(long)n);
+    }
+};
+int main()
+{   double a;
+    long b;
+    cin>>a>>b;
+    Solution obj;
+    cout<<" Power of x to n = "<<obj.mypow(a,b)<<endl;
+    return 0;
+}
