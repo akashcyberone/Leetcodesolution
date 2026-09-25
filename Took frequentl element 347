@@ -1,0 +1,27 @@
+class Solution {
+public:
+static bool comparepair(pair<int,int>&a,pair<int,int>&b){
+    if(a.first==b.first)
+    return a.second>b.second;
+    return a.first<b.first;
+}
+    vector<int> frequencySort(vector<int>& nums) {
+        vector<int>ans;
+        unordered_map<int,int>mp;
+    for(auto k:nums){
+        mp[k]++;
+    }
+    vector<pair<int,int>>v;
+    for(auto x:mp){
+    v.push_back({x.second,x.first});
+    }
+    sort(v.begin(),v.end(), comparepair);
+        
+        for(auto p:v){
+    for(int i=0; i<p.first; i++){
+        ans.push_back(p.second);
+    }
+    }
+        return ans;
+    }
+};
