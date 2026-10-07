@@ -1,0 +1,107 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool frequency_P(string &s1,string &s2){
+    
+    return s1.size()<s2.size(); // Sort by increasing order
+}
+int stringlen(string s){
+    vector<string>v;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p)
+        v.push_back(p);
+    return v.size();
+}
+string maximum_s_word(string s){
+    vector<string>v;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p)
+    v.push_back(p);
+    
+    string res="";
+    int m=0;
+    for(auto k:v){
+        if(m<k.size()){
+            m=k.size();
+            res=k;
+        }
+    }
+    return res;
+}
+string smallest_s(string s){
+    vector<string>v;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p)
+    v.push_back(p);
+    int m=INT_MAX; string ans="";
+    for(auto k:v){
+        if(m>k.size()){
+            m=k.size();
+            ans=k;
+        }
+    }
+    return ans;
+}
+string rev(string s) {
+    stringstream ss(s);
+    vector<string> v;
+    string word;
+
+    while (ss >> word) {
+        v.push_back(word);
+    }
+    reverse(v.begin(), v.end());
+
+    string ans = "";
+
+    for (auto word : v) {
+        ans += word + " ";
+    }
+
+    return ans;
+}
+string longest_word(string s){
+    vector<string>v;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p)
+    v.push_back(p);
+    sort(v.begin(),v.end(),frequency_P);
+    for(auto k:v){
+        return k;
+    }
+}
+
+int main()
+{
+    string s;
+    getline(cin,s);
+    vector<string>v;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p)
+    v.push_back(p);
+    cout<<"Length = "<<stringlen(s)<<endl;
+    cout<<"Longest Word in string = "<<maximum_s_word(s)<<endl;
+    cout<<"Smallest Word in string = "<<smallest_s(s)<<endl;
+    string s1="";
+    sort(v.begin(),v.end(),frequency_P);
+    for(auto k:v)
+    s1=s1+" "+k;
+    cout<<"Sort by frequency ="<<s1;
+    cout<<"Reverse= "<<rev(s);
+    
+//     Input 
+// He is a good boy 
+
+// Output 1  5
+// Output 2. good
+// Output 3.  a
+// Output 4. boy good a is He
+// Output 5.  a He is boy good
+    
+    return 0;
+}
