@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int secondlargest(vector<int>&arr){
+    int mx=*max_element(arr.begin(),arr.end());
+    int SECMX=INT_MIN;
+    arr.erase(remove(arr.begin(),arr.end(),mx));
+    SECMX=*max_element(arr.begin(),arr.end());
+    return SECMX;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>p(n);
+    for(int i=0; i<n; i++){
+        cin>>p[i];
+    }
+    cout<<secondlargest(p);
+    return 0;
+}
