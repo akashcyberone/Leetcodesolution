@@ -1,0 +1,38 @@
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+vector<int>inter(vector<int>p,vector<int>q,vector<int>r){
+    vector<int>ans;
+    for(auto k:p){
+        auto t1=find(q.begin(),q.end(),k);
+        auto t2=find(r.begin(),r.end(),k);
+        if(t1!=q.end() && t2!=r.end()){
+            ans.push_back(k);
+            q.erase(t1);
+            r.erase(t2);
+        }
+    }
+    return ans;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>p(n),q(n),r(n);
+    for(int i=0; i<n; i++){
+        cin>>p[i];
+    }
+    for(int i=0; i<n; i++){
+        cin>>q[i];
+    }
+    for(int i=0; i<n; i++){
+        cin>>r[i];
+    }
+    vector<int>ans=inter(p,q,r);
+    for(auto k:ans){
+        cout<<k<<" ";
+    }
+    return 0;
+}
