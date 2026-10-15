@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+unordered_map<int,vector<string>>findstringbyfreq(string s){
+    
+    unordered_map<int,vector<string>>ans;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p){
+        ans[p.size()].push_back(p);
+    }
+    return ans;
+}
+int main()
+{
+    string s;
+    getline(cin,s);
+    unordered_map<int,vector<string>>mp=findstringbyfreq(s);
+    for(auto k:mp){
+        cout<<k.first<<" ";
+    for(auto word:k.second){
+         cout<<word<<" "<<endl;
+        }
+    }
+
+    return 0;
+}
+
+ /*Input : -He is a good boy
+ Output : size :- 1 : a :- word
+2 : He is
+3 : boy
+4 : good*/
