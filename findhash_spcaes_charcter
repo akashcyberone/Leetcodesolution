@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<string>findhash(string s){
+    vector<string>v;
+    vector<string>ans;
+    vector<string>hash;
+    vector<string>nonhash;
+    stringstream ss(s);
+    string p="";
+    while(ss>>p){
+        v.push_back(p);
+    }
+    for(auto k:v){
+        if(k=="#"){
+            hash.push_back(k);
+        }else{
+            nonhash.push_back(k);
+        }
+    }
+     ans=hash;
+    ans.insert(ans.end(),nonhash.begin(),nonhash.end());
+    return ans;
+}
+int main()
+{
+    string s;
+    getline(cin,s);
+    vector<string>v=findhash(s);
+    for(auto k:v){
+        cout<<k<<" ";
+    }
+
+    return 0;
+}
