@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+string findhash(string s){
+    string hash="",nonhash="";
+    for(auto k:s){
+        if(k=='#'){
+            hash+=k;
+        }else{
+            nonhash+=k;
+        }
+    }
+    return hash+nonhash;
+}
+int main()
+{
+    string s;
+    cin>>s;
+    cout << findhash(s);
+    return 0;
+}
