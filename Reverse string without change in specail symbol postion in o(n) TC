@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+bool isvalid(char ch){
+    if((ch>='a' && ch<='z') ||
+     (ch>='A' && ch<='Z')){
+         return true;
+     }
+     return false;
+}
+string reversestring(string s){
+    int left=0;
+    int right=s.size()-1;
+    while(left<right){
+    if(!isvalid(s[left])){
+        left++;
+    }else if(!isvalid(s[right])){
+        right--;
+    }else{
+        swap(s[left],s[right]);
+        left++;
+    right--;
+    }
+  }
+    return s;
+}
+int main()
+{
+    string s;
+    cin>>s;
+    cout<<reversestring(s)<<" ";
+
+    return 0;
+}
