@@ -4,6 +4,11 @@ using namespace std;
 int findsecondlargest(vector<int>arr){
     int mx=*max_element(arr.begin(),arr.end());
     arr.erase(remove(arr.begin(),arr.end(),mx),arr.end());
+    if (arr.empty()) {
+        cout << "Second largest does not exist";
+        return 0;
+    }
+
     int smx=*max_element(arr.begin(),arr.end());
     return smx;
 }
