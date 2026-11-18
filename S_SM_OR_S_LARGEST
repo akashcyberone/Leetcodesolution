@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int s_sm(vector<int>&arr){
+    set<int>s(arr.begin(),arr.end());
+    if(s.size()<2){
+        return -1;
+    }
+    // second smallest : - s.begin()
+    // second largest : - s.ebegin()
+    auto it=s.rbegin(); 
+    it=next(it);
+    return *it;
+}
+int main()
+{
+    int n,x;
+    cin>>n;
+    vector<int>p(n);
+    for(int i=0; i<n; i++){
+        cin>>p[i];
+    }
+    cout<<s_sm(p)<<" ";
+    
+    return 0;
+}
